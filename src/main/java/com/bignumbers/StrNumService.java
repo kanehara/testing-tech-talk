@@ -9,7 +9,7 @@
  *
  * Created by yohei.kanehara on 7/4/17.
  */
-
+package com.bignumbers;
 import org.springframework.stereotype.Service;
 
 @Service

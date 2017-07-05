@@ -10,8 +10,14 @@
  * Created by yohei.kanehara on 7/4/17.
  */
 
+import com.bignumbers.Compare;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class Main {
     public static void main(String args[]) {
-
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+        Compare cmp = context.getBean(Compare.class);
+        System.out.println(cmp.getComparisonStatement());
+        context.close();
     }
 }
