@@ -26,8 +26,23 @@ public class StrNumService {
         }
 
         // Case 2: Trim leading zeros (and later Case 3: strip '-')
-        a = strip(a);
-        b = strip(b);
+        int i = 0;
+        while(i < a.length() - 1) {
+            if (a.charAt(i) != '0' && a.charAt(i) != '-')  {
+                break;
+            }
+            i++;
+        }
+        a = a.substring(i);
+
+        i = 0;
+        while(i < b.length() - 1) {
+            if (b.charAt(i) != '0' && b.charAt(i) != '-')  {
+                break;
+            }
+            i++;
+        }
+        b = b.substring(i);
 
         // Case 3: Both pos or both neg (Bonus points for swapping args)
         if (aPos) {
@@ -58,17 +73,5 @@ public class StrNumService {
             // Case 1: All characters match, they are equal
             return 0;
         }
-    }
-
-    public String strip(String s) {
-        int i = 0;
-        while(i < s.length() - 1) {
-            if (s.charAt(i) != '0' && s.charAt(i) != '-')  {
-                break;
-            }
-            i++;
-        }
-
-        return s.substring(i);
     }
 }

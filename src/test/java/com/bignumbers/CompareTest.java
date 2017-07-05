@@ -33,7 +33,7 @@ public class CompareTest {
     @Before
     public void setup() {
         when(strNumService.cmp(anyString(), anyString())).thenCallRealMethod();
-        when(strNumService.strip(anyString())).thenCallRealMethod();
+//        when(strNumService.strip(anyString())).thenCallRealMethod();
     }
 
     @Test
