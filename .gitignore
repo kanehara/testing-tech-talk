@@ -1,0 +1,10 @@
+
+.gitignore
+.idea/inspectionProfiles/
+.idea/libraries/Maven__junit_junit_4_12.xml
+.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml
+.idea/libraries/Maven__org_mockito_mockito_all_1_9_5.xml
+.idea/libraries/Maven__org_springframework_spring_test_4_3_9_RELEASE.xml
+.idea/uiDesigner.xml
+src/main/resources/
+target/
