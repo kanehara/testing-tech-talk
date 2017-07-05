@@ -28,7 +28,7 @@ public class StrNumService {
         // Case 2: Trim leading zeros (and later Case 3: strip '-')
         int i = 0;
         while(i < a.length() - 1) {
-            if (a.charAt(i) != '0' && a.charAt(i) != '-')  {
+            if (a.charAt(i) != '0')  {
                 break;
             }
             i++;
@@ -37,7 +37,7 @@ public class StrNumService {
 
         i = 0;
         while(i < b.length() - 1) {
-            if (b.charAt(i) != '0' && b.charAt(i) != '-')  {
+            if (b.charAt(i) != '0')  {
                 break;
             }
             i++;
