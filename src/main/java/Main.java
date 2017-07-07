@@ -18,7 +18,7 @@ public class Main {
     public static void main(String args[]) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
         Compare cmp = context.getBean(Compare.class);
-        System.out.println(cmp.getComparisonStatement());
+        System.out.println(cmp.getComparisonStatement("1", "0"));
         context.close();
     }
 }

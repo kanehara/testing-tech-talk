@@ -14,13 +14,16 @@ package com.bignumbers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
+import java.util.List;
+
 @Component
 public class Compare {
     @Autowired
     StrNumService strNumService;
 
-    public String getComparisonStatement() {
-        int result = strNumService.cmp("123", "1");
+    public String getComparisonStatement(String a, String b) {
+        int result = strNumService.cmp(a, b);
         if (result == 0) {
             return "The numbers are equal!";
         } else if (result == 1) {
@@ -29,5 +32,9 @@ public class Compare {
             return "The second number is larger!";
         }
         return "Invalid comparison";
+    }
+
+    public List<Integer> getComparisonPairList(List<String> pairList) {
+        return Collections.emptyList();
     }
 }
