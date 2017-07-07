@@ -32,13 +32,13 @@ public class CompareTest {
 
     @Before
     public void setup() {
-        when(strNumService.cmp(anyString(), anyString())).thenCallRealMethod();
         when(strNumService.strip(anyString())).thenCallRealMethod();
     }
 
     @Test
     public void getComparisonStatement() {
-        String result = compare.getComparisonStatement();
+        when(strNumService.cmp(anyString(), anyString())).thenReturn(1);
+        String result = compare.getComparisonStatement(anyString(), anyString());
         assertEquals(result, "The first number is larger!");
     }
 }
