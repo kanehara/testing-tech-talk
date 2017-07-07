@@ -42,17 +42,10 @@ public class Compare {
      *     ["1", "0", "0", "1", "2"] -> [1, 0, 1]
      */
     public List<Integer> getComparisonPairList(List<String> pairList) {
-        List<Integer> comparisonPairList = new ArrayList<Integer>();
-        for (int i = 0; i < pairList.size(); i += 2) {
-            if ((i + 1) >= pairList.size()) {
-                comparisonPairList.add(1);
-            } else {
-                String a = pairList.get(i);
-                String b = pairList.get(i + 1);
-                int result = strNumService.cmp(a, b);
-                comparisonPairList.add(result);
-            }
-        }
-        return comparisonPairList;
+        List<Integer> result = new ArrayList<Integer>();
+
+        // TODO: Logic here....
+
+        return result;
     }
 }
