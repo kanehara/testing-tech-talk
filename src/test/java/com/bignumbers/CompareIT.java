@@ -21,6 +21,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(JUnit4.class)
@@ -53,7 +55,18 @@ public class CompareIT {
     }
 
     @Test
-    public void getComparisonList() {
+    public void getComparisonList_even() {
         List<String> pairList = Arrays.asList("1", "0", "-1", "-2");
+        List<Integer> comparisonPairList = compare.getComparisonPairList(pairList);
+        List<Integer> expected = Arrays.asList(1, 1);
+        assertThat(comparisonPairList, is(expected));
+    }
+
+    @Test
+    public void getComparisonList_odd() {
+        List<String> pairList = Arrays.asList("1", "0", "-1", "-2", "1");
+        List<Integer> comparisonPairList = compare.getComparisonPairList(pairList);
+        List<Integer> expected = Arrays.asList(1, 1, 1);
+        assertThat(comparisonPairList, is(expected));
     }
 }

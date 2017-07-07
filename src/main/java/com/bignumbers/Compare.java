@@ -14,7 +14,7 @@ package com.bignumbers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -34,7 +34,25 @@ public class Compare {
         return "Invalid comparison";
     }
 
+    /**
+     * Compares each pair in pairList and returns an array of integers of the pair comparisions.
+     * For lists with odd number of string's, the comparison should return 1 for that pair
+     *
+     * Ex) ["1", "0", "0", "1"] -> [1, 0]
+     *     ["1", "0", "0", "1", "2"] -> [1, 0, 1]
+     */
     public List<Integer> getComparisonPairList(List<String> pairList) {
-        return Collections.emptyList();
+        List<Integer> comparisonPairList = new ArrayList<Integer>();
+        for (int i = 0; i < pairList.size(); i += 2) {
+            if ((i + 1) >= pairList.size()) {
+                comparisonPairList.add(1);
+            } else {
+                String a = pairList.get(i);
+                String b = pairList.get(i + 1);
+                int result = strNumService.cmp(a, b);
+                comparisonPairList.add(result);
+            }
+        }
+        return comparisonPairList;
     }
 }
